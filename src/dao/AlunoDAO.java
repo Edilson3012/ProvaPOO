@@ -39,7 +39,7 @@ public class AlunoDAO implements Acoes {
                 pre.setString(4, a.getRa());
                 pre.executeUpdate();
                 System.out.println("Inclusão realizada com sucesso!");
-                JOptionPane.showMessageDialog(null, "Aluno incluido com sucesso porra!!!");
+                JOptionPane.showMessageDialog(null, "Aluno incluido com sucesso!");
             } catch (SQLException c) {
                 System.out.println("Erro ao incluir: " + c.getMessage());
             }

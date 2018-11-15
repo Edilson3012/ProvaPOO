@@ -8,6 +8,7 @@ package view;
 import Model.Aluno;
 //import Model.OperacaoBanco;
 import dao.AlunoDAO;
+import java.sql.ResultSet;
 //import java.awt.HeadlessException;
 //import java.sql.Connection;
 //import java.sql.PreparedStatement;
@@ -39,6 +40,16 @@ public class cad_aluno extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel3 = new javax.swing.JPanel();
+        btnAdicionar = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
+        btnExcluir1 = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
+        btnSalvar = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
         txtNome = new javax.swing.JTextField();
         txtCurso = new javax.swing.JTextField();
         txtIdade = new javax.swing.JTextField();
@@ -48,6 +59,138 @@ public class cad_aluno extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnGravar = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        btnAdicionar1 = new javax.swing.JButton();
+        btnAlterar1 = new javax.swing.JButton();
+        btnExcluir2 = new javax.swing.JButton();
+        btnBuscar1 = new javax.swing.JButton();
+        btnSalvar1 = new javax.swing.JButton();
+        btnSair1 = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btnAdicionar.setBackground(new java.awt.Color(128, 128, 128));
+        btnAdicionar.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Cliente Adicionar.png")); // NOI18N
+        btnAdicionar.setToolTipText("Adicionar Funcionário");
+        btnAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAdicionar.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnAdicionar.setIconTextGap(2);
+        btnAdicionar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAdicionarMousePressed(evt);
+            }
+        });
+
+        btnAlterar.setBackground(new java.awt.Color(128, 128, 128));
+        btnAlterar.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Cliente Alterar 2.png")); // NOI18N
+        btnAlterar.setToolTipText("Alterar Funcionário");
+        btnAlterar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAlterar.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnAlterar.setIconTextGap(2);
+        btnAlterar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAlterarMousePressed(evt);
+            }
+        });
+
+        btnExcluir1.setBackground(new java.awt.Color(128, 128, 128));
+        btnExcluir1.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Cliente Delete 2.png")); // NOI18N
+        btnExcluir1.setToolTipText("Excluir Funcionário");
+        btnExcluir1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnExcluir1.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnExcluir1.setIconTextGap(2);
+        btnExcluir1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnExcluir1MousePressed(evt);
+            }
+        });
+
+        btnBuscar.setBackground(new java.awt.Color(128, 128, 128));
+        btnBuscar.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\search2.png")); // NOI18N
+        btnBuscar.setToolTipText("Buscar Funcionário");
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnBuscar.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnBuscar.setIconTextGap(2);
+
+        btnSalvar.setBackground(new java.awt.Color(128, 128, 128));
+        btnSalvar.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\SAVEE.png")); // NOI18N
+        btnSalvar.setToolTipText("Salvar");
+        btnSalvar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnSalvar.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnSalvar.setIconTextGap(2);
+        btnSalvar.setMaximumSize(new java.awt.Dimension(128, 128));
+        btnSalvar.setMinimumSize(new java.awt.Dimension(128, 128));
+        btnSalvar.setPreferredSize(new java.awt.Dimension(128, 128));
+        btnSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSalvarMousePressed(evt);
+            }
+        });
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
+
+        btnSair.setBackground(new java.awt.Color(128, 128, 128));
+        btnSair.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\voltar.png")); // NOI18N
+        btnSair.setToolTipText("Sair");
+        btnSair.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnSair.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnSair.setIconTextGap(2);
+
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnExcluir1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 181, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExcluir1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator1)
+                    .addComponent(jSeparator2)
+                    .addComponent(jSeparator3))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -66,12 +209,134 @@ public class cad_aluno extends javax.swing.JFrame {
             }
         });
 
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btnAdicionar1.setBackground(new java.awt.Color(128, 128, 128));
+        btnAdicionar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Cliente Adicionar.png")); // NOI18N
+        btnAdicionar1.setToolTipText("Adicionar Funcionário");
+        btnAdicionar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAdicionar1.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnAdicionar1.setIconTextGap(2);
+        btnAdicionar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAdicionar1MousePressed(evt);
+            }
+        });
+
+        btnAlterar1.setBackground(new java.awt.Color(128, 128, 128));
+        btnAlterar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Cliente Alterar 2.png")); // NOI18N
+        btnAlterar1.setToolTipText("Alterar Funcionário");
+        btnAlterar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnAlterar1.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnAlterar1.setIconTextGap(2);
+        btnAlterar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnAlterar1MousePressed(evt);
+            }
+        });
+
+        btnExcluir2.setBackground(new java.awt.Color(128, 128, 128));
+        btnExcluir2.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Cliente Delete 2.png")); // NOI18N
+        btnExcluir2.setToolTipText("Excluir Funcionário");
+        btnExcluir2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnExcluir2.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnExcluir2.setIconTextGap(2);
+        btnExcluir2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnExcluir2MousePressed(evt);
+            }
+        });
+
+        btnBuscar1.setBackground(new java.awt.Color(128, 128, 128));
+        btnBuscar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\search2.png")); // NOI18N
+        btnBuscar1.setToolTipText("Buscar Funcionário");
+        btnBuscar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnBuscar1.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnBuscar1.setIconTextGap(2);
+
+        btnSalvar1.setBackground(new java.awt.Color(128, 128, 128));
+        btnSalvar1.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\SAVEE.png")); // NOI18N
+        btnSalvar1.setToolTipText("Salvar");
+        btnSalvar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnSalvar1.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnSalvar1.setIconTextGap(2);
+        btnSalvar1.setMaximumSize(new java.awt.Dimension(128, 128));
+        btnSalvar1.setMinimumSize(new java.awt.Dimension(128, 128));
+        btnSalvar1.setPreferredSize(new java.awt.Dimension(128, 128));
+        btnSalvar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnSalvar1MousePressed(evt);
+            }
+        });
+        btnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvar1ActionPerformed(evt);
+            }
+        });
+
+        btnSair1.setBackground(new java.awt.Color(128, 128, 128));
+        btnSair1.setIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\voltar.png")); // NOI18N
+        btnSair1.setToolTipText("Sair");
+        btnSair1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnSair1.setDisabledIcon(new javax.swing.ImageIcon("C:\\Users\\edilsongm\\Desktop\\Edilson\\Documentos\\TCC\\TCC - LOGO\\Imagens\\Prontos\\Produto Adicionar.png")); // NOI18N
+        btnSair1.setIconTextGap(2);
+
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAdicionar1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAlterar1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnExcluir2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSalvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnSair1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 10, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnAlterar1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnAdicionar1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnExcluir2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSalvar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSair1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnGravar)
                     .addGroup(layout.createSequentialGroup()
@@ -82,16 +347,20 @@ public class cad_aluno extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtRa, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                            .addComponent(txtRa)
                             .addComponent(txtIdade)
                             .addComponent(txtCurso)
-                            .addComponent(txtNome))))
-                .addContainerGap(165, Short.MAX_VALUE))
+                            .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -103,13 +372,13 @@ public class cad_aluno extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtRa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(34, 34, 34)
                 .addComponent(btnGravar)
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addGap(38, 38, 38))
         );
 
         pack();
@@ -124,6 +393,120 @@ public class cad_aluno extends javax.swing.JFrame {
         
         aluno.incluir(a); 
     }//GEN-LAST:event_btnGravarActionPerformed
+
+    private void btnAdicionarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMousePressed
+
+        txtNome.setEnabled(true);
+        txtCurso.setEnabled(true);
+        txtIdade.setEnabled(true);
+        txtRa.setEnabled(true);
+        
+    }//GEN-LAST:event_btnAdicionarMousePressed
+
+    private void btnAlterarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlterarMousePressed
+
+        /*
+        int linha = tbAlunos.getSelectedRow();
+        String codigo = tbAlunos.getModel().getValueAt(linha, 0).toString();
+
+        Aluno alun = new Aluno();
+        alun.setId(codigo);
+        alun.setNome(txtnome.getText());
+        alun.setDtNasc(mskDTNasc.getText());
+        alun.setRg(mskRG.getText());
+        alun.setCpf(mskCPF.getText());
+
+        try {
+            op.alterarAluno(alun);
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroAluno.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        ResultSet rs = op.listarAluno();
+        carregarTabela(rs);
+        */
+    }//GEN-LAST:event_btnAlterarMousePressed
+
+    private void btnExcluir1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluir1MousePressed
+
+        /*
+        int linha = tbAlunos.getSelectedRow();
+        String codigo = tbAlunos.getModel().getValueAt(linha, 0).toString();
+
+        Aluno alun = new Aluno();
+        alun.setId(codigo);
+        op.excluirAluno(alun);
+
+        ResultSet rs = op.listarAluno();
+        carregarTabela(rs);
+
+        JOptionPane.showMessageDialog(null, "Aluno Excluído!");
+        */
+    }//GEN-LAST:event_btnExcluir1MousePressed
+
+    private void btnSalvarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMousePressed
+
+        /*
+        Aluno alun = new Aluno();
+        alun.setNome(txtnome.getText());
+        alun.setDtNasc(mskDTNasc.getText());
+        alun.setRg(mskRG.getText());
+        alun.setCpf(mskCPF.getText());
+
+        Date Data = null;
+        String DtTxt = null;
+        try {
+            Data = new SimpleDateFormat("dd/MM/yyyy").
+            parse(mskDTNasc.getText());
+            DtTxt = new SimpleDateFormat("yyyy-MM-dd").format(Data);
+        } catch (java.text.ParseException e) {
+            e.printStackTrace();
+        }
+        alun.setDtNasc(DtTxt);
+
+        op.incluirAluno(alun);
+
+        JOptionPane.showMessageDialog(null,"Aluno incluido com sucesso");
+        txtId.setText(null);
+        txtnome.setText(null);
+        mskDTNasc.setText(null);
+        mskRG.setText(null);
+        mskCPF.setText(null);
+
+        ResultSet rs = op.listarAluno();
+        carregarTabela(rs);
+        */
+    }//GEN-LAST:event_btnSalvarMousePressed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalvarActionPerformed
+
+    private void btnAdicionar1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionar1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAdicionar1MousePressed
+
+    private void btnAlterar1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlterar1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAlterar1MousePressed
+
+    private void btnExcluir2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluir2MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnExcluir2MousePressed
+
+    private void btnSalvar1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvar1MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSalvar1MousePressed
+
+    private void btnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvar1ActionPerformed
+        Aluno a = new Aluno();
+        a.setNome(txtNome.getText());
+        a.setCurso(txtCurso.getText());
+        a.setIdade(Integer.parseInt(txtIdade.getText()));
+        a.setRa(txtRa.getText());
+        
+        aluno.incluir(a); 
+
+    }//GEN-LAST:event_btnSalvar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,11 +544,31 @@ public class cad_aluno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdicionar;
+    private javax.swing.JButton btnAdicionar1;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnAlterar1;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnBuscar1;
+    private javax.swing.JButton btnExcluir1;
+    private javax.swing.JButton btnExcluir2;
     private javax.swing.JButton btnGravar;
+    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnSair1;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JButton btnSalvar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextField txtCurso;
     private javax.swing.JTextField txtIdade;
     private javax.swing.JTextField txtNome;
